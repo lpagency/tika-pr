@@ -1,0 +1,23 @@
+    <div class="inside-header">
+        <div id="main-nav" class="" style="position:absolute;width: 100%;">
+            <div class="container-fluid" style="max-width: 100%;padding: 0px;">
+                <div class="nav-header">
+                    <a href="{{ site_base }}/" class="nav-brand" style="border:0px;">
+                        <img src="{{ site_base }}/static/img/logome.png">
+                    </a>
+                    <form action="{{ site_base }}/search" method="get">
+                        <input type="text" name="search_query" value="{% try %}{{ search_query }}{% except %}{% end %}" class="buscar-header-norm search-input" placeholder="BUSCAR">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- título pagina -->
+        <ul class="nav-list text-center effect menu-2 menu-3 nav-header-li-hover" style="left:0;">
+            <li class="titulo-paginas">{% block header_title %}{% end %}</li>
+        </ul>
+        <!-- título pagina -->
+        <!-- imagen fixed -->
+        <img src="{{ site_base }}/static/img/header2.png" class="show-hide" style="width:100%;">
+        <img src="{{ site_base }}/static/img/header2-movil.png" class="hide-show" style="width:100%;">
+        <!-- imagen fixed -->
+    </div>

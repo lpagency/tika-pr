@@ -1,0 +1,187 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+<style type="text/css">
+    .product-wrapper{
+        max-height: 370px;
+    }
+</style>
+
+<style type="text/css">
+/*----------iframe------------*/
+/*
+.fancybox-skin{
+    background:transparent !important;
+    box-shadow:none !important;
+}
+
+.fancybox-outer{
+    background:transparent !important;
+}
+
+.fancybox-wrap{
+    left: 0px !important;
+}
+
+.fancybox-close {
+    background-image: url('https://84static.loadingplay.com/static/images/f09d34e2f8847a737bfd85211c3d6b67_X.png')!important;
+     background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+}*/
+
+</style>
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/tika_tag_recipe.js"></script>
+ <script type="text/javascript">
+     $(document).ajaxComplete(function()
+        {
+            var hash = window.location.hash;
+
+            if (hash !== '')
+            {
+                window.location.href= window.location.href;
+            }
+        });
+
+    $(document).ready(function(){
+        // alert('El alto de la resolucion de pantalla es de '+$(window).height()+'pixeles'); 
+
+    // $(".fancybox").fancybox({
+    //     'width':$(window).width(),
+    //     'height':600,
+    //     'autoSize' : false,
+    //     'autoScale': false,
+    //     'padding': 0,
+    //     'helpers': {
+    //             overlay: {
+    //                 locked: false,
+    //                 css: { 
+    //                     'background': 'url(https://7static.loadingplay.com/static/images/eb91172c27b8ba2f678ac75a371cf33d_BACKGROUND.png) no-repeat center center',
+    //                     'background-size':'cover',
+    //                     '-moz-background-size': 'cover',
+    //                     '-webkit-background-size': 'cover',
+    //                     '-o-background-size': 'cover'
+    //                     } 
+    //             }
+    //         }
+    //     });
+     });
+
+ </script>
+{% end %}
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+ <!-- <img class="fondo-recet" src="https://7static.loadingplay.com/static/images/3c8d27fdf1d6b8c1ab43520e54f9c747_Listado_de_recetas.png" fixed > -->
+ <!-- editar imagen -->
+    {% if is_admin %}
+    <div class="image-upload lapiz visible-movil">
+        <label for="img_banner_recipe">
+            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+        </label>
+        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_recipe" name="image" id="img_banner_recipe" >
+    </div>
+    {% end %}
+    <!--
+    <div class="fondo-banner" >
+        <div class="parallax-window" data-parallax="scroll" data-image-src="{{ read_image(site.name + '_banner_recipe',500) }}"></div>
+    </div>
+    -->
+
+    <img id="{{ site.name }}_banner_recipe" src="{{ read_image(site.name + '_banner_recipe', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_recipe',500) }}'" class="fondo-banner" alt="item">
+    <!-- fin editar imagen -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                 <!-- <h3 class="pro-rec" style="text-align:center;"> Recetas </h3>  -->
+                 <h3 class="pro-rec " style="text-align:center;"><span class="{{ editabletext }}" text-id="{{ site.name + '_texto-recipe' }}" >{{ read_text(site.name + '_texto-recipe') }}</span></h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="description" style="text-align:center;"><span class="{{ editabletext }}" text-id="{{ site.name + '_texto-descrip' }}" >{{ read_text(site.name + '_texto-descrip') }}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- style="background-image:url(https://7static.loadingplay.com/static/images/498f5053b968f00f2b1919224ccea4fc_lightpaperfibers.png);width:100%;" -->
+<div class="" >
+    <div class="container">
+        <div class="row">
+            <div id="recetas_dips" class="col-sm-12" >
+             <!-- <h1 class="recetas text-center">Recetas de Dips</h1> -->
+                    <h2 id="" class="space180 text-center mbtm7"><span class="{{ editabletext }}" text-id="{{ site.name + '_texto-dips' }}" style="font-size: 50px;color: #bcbcbc;" >{{ read_text(site.name + '_texto-dips') }}</span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid tik"></div>
+    <div class="container" style="padding-top:20px">
+        <div class="row dips-recipe">
+             
+        </div> 
+    </div>
+    <div class="">
+        <div class="row">
+            <div id="recetas_mastikas" class="col-sm-12">
+                <!-- <h1 class="recetas text-center">Recetas de Pastas</h1> -->
+                <h2 class="space50 text-center mbtm7"><span class="{{ editabletext }}" text-id="{{ site.name + '_texto-pasta' }}" style="font-size: 50px;color: #bcbcbc;">{{ read_text(site.name + '_texto-pasta') }}</span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid tik"></div>
+    <div class="container" style="padding-top:20px">
+        <div class="row pasta-recipes">
+            
+        </div> 
+    </div>
+    <div class="container">
+        <div class="row">
+            <div id="recetas_nuts"class="col-sm-12" >
+             <!-- <h1 class="recetas text-center">Recetas de Nust</h1> -->
+            <h2 class="space50 text-center mbtm7"><span class="{{ editabletext }}" text-id="{{ site.name + '_texto-nust' }}" style="font-size: 50px;color: #bcbcbc;">{{ read_text(site.name + '_texto-nust') }}</span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid tik"></div>
+    <div class="container" style="padding-top:20px">
+        <div class="row nuts-recipes">
+             
+        </div> 
+    </div>
+    <div class="container bor">
+        <div class="row">
+            <div id="otras_recetas"class="col-sm-12" >
+                <!-- <h1 class="recetas text-center">Otras Recetas</h1> -->
+                <h2 class="space50 text-center mbtm7"><span class="{{ editabletext }}" text-id="{{ site.name + '_texto-other' }}" style="font-size: 50px;color: #bcbcbc;" >{{ read_text(site.name + '_texto-other') }}</span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid tik"></div>
+    <div class="container" style="padding-top:20px">
+        <div class="row other-recipes">
+           
+        </div> 
+    </div>
+    <div class="space50"></div>
+    {% include '../home/footer.html' %}
+
+    <div class="clearfix"></div>
+</div>
+{% end %}

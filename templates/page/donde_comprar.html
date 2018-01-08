@@ -1,0 +1,163 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+ <script type="text/javascript" src="{{ site_base }}/static/js/store_list.js"></script>
+ <script type="text/javascript" src="{{ site_base }}/static/js/map_store.js" async="async"></script>
+ <script type="text/javascript">
+
+ var stores=[];
+
+var base_url = 'https://apibodegas.loadingplay.com/',
+checkout_url = 'https://pay.loadingplay.com/';
+
+var app_public = 9;
+
+function isLocalHost() {
+    return document.location.href.indexOf('localhost') != -1;
+}
+
+function isDevelopment() {
+    return document.location.href.indexOf('ondev.today') != -1;
+}
+
+// configure for each enviroment
+if ( isLocalHost() ) 
+{
+    base_url = 'https://apibodegas.loadingplay.com/';
+    checkout_url = 'https://pay.loadingplay.com/';
+    app_public = 15;
+    // base_url = 'http://localhost:8520/';
+    // checkout_url = 'http://localhost:8522/';
+    // app_public= 13;
+} 
+else if ( isDevelopment() ) 
+{
+    base_url = 'https://apibodegas.loadingplay.com/';
+    checkout_url = 'https://pay.loadingplay.com/';
+    app_public = 15;
+}
+// $(document).ready(function(){
+//     $.ajax({
+//         url:base_url+"store/list/"+app_public+"/false",
+//         async: false,
+//         success: function(data){
+//             stores=data;
+//             // console.log(stores);
+//             // stores=JSON.stringify(stores)
+//         }
+//     });
+// });
+
+// window.onload = function(){
+//     for(var x=0;x<stores.stores.length;x++){
+//         var html='<tr>';
+//         html+='<td>'+stores.stores[x].country+'</td>';
+//         html+='<td>'+stores.stores[x].city+'</td>';
+//         html+='<td>'+stores.stores[x].name+'</td>';
+//         html+='<td>'+stores.stores[x].street+'</td>';
+//         html+='</tr>';
+
+//         $("#where-to-buy").append(html);
+//     }
+// };
+ </script>
+{% end %}
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+ <!-- <img class="fondo-recet" src="https://7static.loadingplay.com/static/images/3c8d27fdf1d6b8c1ab43520e54f9c747_Listado_de_recetas.png"> -->
+ <!-- editar imagen -->
+    {% if is_admin %}
+    <div class="image-upload lapiz visible-movil">
+        <label for="img_banner_comprar">
+            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+        </label>
+        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_comprar" name="image" id="img_banner_comprar" >
+    </div>
+    {% end %}
+    <img id="{{ site.name }}_banner_comprar" src="{{ read_image(site.name + '_banner_comprar', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_comprar',500) }}'" class="fondo-banner" alt="item">
+    <!-- fin editar imagen -->
+ <div class="container">
+
+       <div class="row">
+           <div class="col-sm-12">
+                 <!-- <h3 class="pro-rec" style="text-align:center;"> Recetas </h3>  -->
+                <h3 class="pro-rec " style="text-align:center;"><span class="{{ editabletext }}" text-id="{{ site.name + '_texto-comprar' }}" >{{ read_text(site.name + '_texto-comprar') }}</span></h3>
+            </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="description" style="text-align:center;"><span class="{{ editabletext }}" text-id="{{ site.name + '_texto-descrip-comprar' }}" >{{ read_text(site.name + '_texto-descrip-comprar') }}</span></p>
+                    </div>
+                 </div>
+        </div>
+</div>
+<section>
+
+    <!-- mapa -->
+    <div id="map" class="fondo-mapa space150"></div>
+    <!-- fin mapa -->
+
+    <!-- boton rojo importadores -->
+    <div class="col-md-12 col-sm-6 col-xs-11 text-center">
+        <a href="{{ site_base }}/tika_en_el_mundo" class="btn importad-int btn-lg active" role="button">CONOCE NUESTROS IMPORTADORES</a>
+        <div class="space50"></div>
+    </div>
+    <!-- fin boton rojo importadores -->
+
+<!-- <div class="row space150">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-md-offset-1 col-sm-8 col-md-offset-1">
+        <table id="stores" class="table table-responsive table-hover table-condensed table-where-to-buy">
+            <thead>
+                <tr>
+                    <th>País</th>
+                    <th>Nombre</th>
+                    <th>Ciudad</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div> -->
+</section>
+<div class="space50"></div>
+
+
+
+<!-- <section class="space50">
+    <table class="table table-responsive table-where-to-buy">
+        <thead>
+            <tr>
+                <th class="country">País</th>
+                <th class="city">Ciudad</th>
+                <th class="shop">Comercio</th>
+                <th class="address">Dirección</th>
+            </tr>
+        </thead>
+        <tbody  id="where-to-buy">
+            
+        </tbody>
+    </table>
+</section> -->
+{% include '../home/footer.html' %}
+{% end %}

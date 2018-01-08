@@ -1,0 +1,126 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block scripts %}
+    <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script>
+    <!-- archivos para galería -->
+    <script src="{{ site_base }}/static/js/modernizr.custom.js"></script>
+    <script src="{{ site_base }}/static/js/jquery.instaheader.js"></script>
+    <link href="{{ site_base }}/static/css/jquery.instaheader.css" rel="stylesheet">
+    <!-- archivos para galería -->
+{% end %}
+{% block header %}
+{% include '../home/inside_header.html' %}
+{% end %}
+{% block body %}
+    <div id="wrap">
+        <!-- registration -->
+        <div class="container-fluid-art cart-list productlist">
+            <div class="row">
+                <div class="col-sm-12 blog-content">
+                    <article>
+                        <header>
+                            <h1 class="h1-art">
+                                este es el nombre de la galeria
+                            </h1>
+                        </header>
+                        <div class="post-date" style="text-align:left;">
+                            25 de may 2015 
+                        </div>
+                        <div class="content articulo-text" style="text-align:left;">
+                            <div class="col-sm-12" style="margin: 0 auto;float: none;">
+                            <!-- html para galería -->
+                                <div class="instaheaderbg">
+							        <div id="header">
+							        </div>
+							    </div>
+							<!-- html para galería -->
+                            </div>
+                            <!-- html utilizado para la galería -->
+                            <div class="row demo-row" style="display:none;">
+							      <ul class="thumbnails" id="example1">
+							       <li class="span3"><a href=""><img src="http://farm1.staticflickr.com/61/366959006_94023bb220.jpg" /></a></li>
+							       <li class="span3"><a href=""><img src="http://farm1.staticflickr.com/195/492389522_d5609a92b4.jpg" /></a></li>
+							       <li class="span3"><a href=""><img src="http://farm1.staticflickr.com/235/518821732_f195b900ec.jpg" /></a></li>
+							       <li class="span3"><a href=""><img src="http://farm1.staticflickr.com/168/397834706_6a46c6ada5.jpg" /></a></li>
+							       <li class="span3"><a href=""><img src="http://distilleryimage3.s3.amazonaws.com/e3846d689c5a11e2a1c022000a9e06ab_7.jpg" /></a></li>
+							       <li class="span3"><a href=""><img src="http://farm4.staticflickr.com/3008/2995262331_d41063a272.jpg" /></a></li>
+							       <li class="span3"><a href=""><img src="http://farm1.staticflickr.com/183/363695635_5621ff0da4.jpg" /></a></li>
+							       <li class="span3"><a href=""><img src="http://distilleryimage3.s3.amazonaws.com/e3846d689c5a11e2a1c022000a9e06ab_7.jpg" /></a></li>
+							       <li class="span3"><a href=""><img src="http://farm4.staticflickr.com/3008/2995262331_d41063a272.jpg" /></a></li>
+							       <li class="span3"><a href=""><img src="http://farm1.staticflickr.com/183/363695635_5621ff0da4.jpg" /></a></li>
+							      </ul>
+							    </div> 
+							<!-- html utilizado para la galería -->
+                            <div class="col-sm-12 especial">
+                                <p style="float:right;" class="p-art">
+                                    Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).
+                                </p>
+                            </div>
+                            <div class="col-sm-12 especial">
+                                <a style="float: right;" id="show_more">Ver menos...</a>
+                            </div>
+                            <div class="post-date col-sm-12 ">
+                                tags | <a>tagsito</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-3 blog-sidebar">
+                    <div class="widget" style="text-align:left;">
+                    </div>
+                </div>
+            </div>
+            <article>
+                <header>
+                    <h1 style="text-align:left;">Contenido relacionados</h1>
+                </header>
+            </article>
+            
+            <!-- row 4 -->
+        </div>
+        <div class="carritoproductos clearfix">
+            <div class="flecha clearfix">
+            </div>
+        </div>
+    </div>
+
+    <!-- script para galería -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var whole_text = $(".p-art").text();
+            var show_more_button = $("#show_more");
+
+            show_more_button.click(function(){
+                if(show_more_button.text() == "Ver menos..."){
+                    //RECORTAR TEXTO
+                    var short_text = whole_text.substring(0, 300);
+                    while(short_text.charAt(short_text.length - 1) != " "){
+                        short_text = short_text.substring(0, short_text.length - 1);
+                    }                    
+                    $(".p-art").text(short_text);
+                    show_more_button.text("Ver más...");
+                }else if(show_more_button.text() == "Ver más..."){
+                    $(".p-art").text(whole_text);
+                    show_more_button.text("Ver menos...");
+                }    
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('#header').instaheader({
+            auto: true,
+            imgs:[7],
+            urls:[7],
+            selector:'img',
+            time:1000,
+            scan:false,
+            animation_time:500,
+            animationType:'random'
+          });
+        });
+    </script>
+{% end %}

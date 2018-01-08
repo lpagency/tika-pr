@@ -1,0 +1,281 @@
+
+.product-section-title h2 {
+    font-size: 58px;
+    font-weight: 200;
+    color: #555;
+    }
+
+.product-section-title a {
+    font-size: 22px;
+    margin-top: 44px;
+    display: block;
+    }
+    
+.product-wrapper{
+    text-align: center;
+    max-height: 510px !important;
+    }
+
+.recipe-wrapper{
+    text-align: center;
+   /* max-height: 400px !important;*/
+    }
+/*.product-wrapper img {
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 350px;
+}*/
+
+.product-wrapper .merk, .camot , .detalle-recipe{
+    width: 315px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-weight: 400;
+    color: black;
+    /*min-height: 50px!important;*/
+    height: 2.2em;
+    /*padding-left: 60px;*/
+    }
+
+.recipe-wrapper .merk, .camot {
+    width: 315px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-weight: 400;
+    color: black;
+    /*min-height: 50px!important;*/
+    height: 2.2em;
+    }
+
+.merk{
+    width: 100%;
+    height: 2.2em;
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 20px !important;
+    }
+
+.camot, .detalle-recipe{
+     width: 100%; 
+    text-align: center;
+    /*font-size: 19px;*/
+    /*overflow: hidden;*/
+    height:  2.2em;
+/*    margin-top: 10px !important;
+    margin-bottom: 38px;*/
+    font-weight: 200;
+    position: relative;
+    bottom: 43px;
+    }
+
+.camot{
+    font-size: 19px;
+}
+
+.detalle-recipe{
+    margin-top: 48px!important;
+    font-size: 16px;
+}
+
+span.productt{
+    position: relative;
+    right: 63px;
+    font-size: 22px;
+    display: table;
+    float: right;
+    }
+
+.red{
+      color: #B40404;
+    }
+
+.red2{
+      color: #B40404;
+    }
+.red:hover{
+    color: #B40404;
+    }
+
+/*.triangle{
+    float: right;
+    right: -5px;
+    position: relative;
+    top: 12px;
+}*/
+
+.triangle2{
+    float: right;
+    right: -5px;
+    position: relative;
+    top: 12px;
+    }
+
+.productoss{
+    margin:0 auto;
+    text-align: center;
+    display: table;
+    position: relative;
+    padding-top: 20px;
+    }
+
+@media (max-width: 991px){
+    span.productt{
+      right: 125px;
+      top: -2px;
+    }
+}
+@media (max-width:940px){
+    ..camot {
+    overflow: hidden;
+    height: 36px;
+
+    }
+}
+@media screen and (max-width: 700px){
+.products h2{
+    padding-left: 10px;
+    padding-top: 45px;
+  }
+
+span.productt{
+    position: relative;
+    left: -11px;
+    top: -6px;
+    font-size: 17px;
+  }
+
+
+.triangle{
+    top: 7px;
+}
+
+.triangle2{
+   top: 7px;
+   right: 20px;
+}
+
+.red2{
+  position: relative;
+  right: 42px;
+    }
+ /*.product-wrapper img{
+    margin-left: -7px !important;
+    margin-right: -7px !important;
+ }*/
+.camot {
+    overflow: hidden;
+    height: 36px;
+    }
+}
+
+
+/*--6plus--*/
+@media screen and (max-width:414px){
+.products h2{
+     padding-left: 48px;
+  }
+span.productt{
+    left: -65px;
+    }
+/*a{
+   margin-left: 45px;
+ }*/
+
+}
+
+@media screen and (max-width:400px){
+.products h2{
+     padding-left: 32px;
+  }
+
+  /*a{
+     margin-left: 29px;
+  }*/
+
+  span.productt{
+    left: -44px;
+  }
+}
+
+@media screen and (max-width:320px){
+  /*--original--*/
+  
+.products h2{
+    padding-left: 2px;
+  }
+
+ /*a{
+    margin-left: auto;
+ }*/
+
+
+span.productt{
+    position: relative;
+    left: -11px;
+    top: -6px;
+    font-size: 17px;
+  }
+
+
+}
+@media (max-width:1290px){
+    .recipe-wrapper .merk {
+        width: 280px;
+    }
+}
+@media screen and (max-width: 1200px)
+{
+    .product-section-title h2 {
+        text-align: left;
+    }
+
+    .product-section-title a {
+        text-align: left;
+        width: 360px;
+    }
+
+    .product-section-title a {
+        margin-top: 0px;
+    }
+
+    .product-wrapper .merk, .camot {
+        padding-left: 50px !important;
+    }
+
+
+}
+
+
+@media screen and (max-width: 990px){
+    .merk{
+        width:215px!important;
+    }
+    .camot{
+        width: 227px;
+    }
+
+    .product-section-title img {
+        display: none;
+    }
+
+    .product-section-title a, .product-section-title h2 {
+        text-align: center;
+        width: 100%;
+        right: 0px;
+        display: block;
+
+    }
+
+    .space-60 {
+        height: 60px;
+    }
+
+    .product-wrapper .merk, .camot {
+        padding-left: 0px !important;
+    }
+}

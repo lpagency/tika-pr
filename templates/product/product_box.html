@@ -1,0 +1,12 @@
+<script type="text/template" id="product-box" >
+	<a href="{{ site_base }}/sc/product/detail/{{! name }}/{{! id }}">
+    <div class="col-md-4 col-xs-12 product-wrapper">
+        <div class="img-wrapper">
+            <img src="{{! images[0]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[0]['thumb_500'] }}'" />
+        </div>
+        <h4 class="merk ellipsis multiline">{{! name }}</h4>
+        <h6 class="camot ellipsis multiline">{{! bullet_1 }}</h6>
+        <div class="space50"></div>
+    </div>
+    </a>
+</script>

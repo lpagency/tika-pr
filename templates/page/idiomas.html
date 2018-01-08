@@ -1,0 +1,38 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+
+<style type="text/css">
+
+</style>
+{% end %}
+
+{% block javascript %}
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/tag_group_home.js" async="async"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/map_store.js" async="async"></script>
+{% block body %}
+{% end %}
+
+<div class="container-fluid fondo-idiom">
+    <div class="row">
+            <div class="col-md-offset-1 col-md-9 col-md-offset2">
+                <div class="text center">
+                    <ul class="no-dot">
+                        <li class="titulo-idiom">Selecciona tu idioma</li>
+                        <li class="list-idiom">Ingles</li>
+                        <li class="list-idiom">Español</li>
+                        <li class="list-idiom">Aleman</li>
+                        <li class="list-idiom">Chino</li>
+                        <li class="list-idiom">Potugues</li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+</div>
+{% end %}

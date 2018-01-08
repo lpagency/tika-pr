@@ -1,0 +1,113 @@
+<section id="inner-banner"><!-- start banner -->
+<!-- <!-- <div class="banner-caption"><!-- start banner caption -->
+<!-- <h1 class=" whiteclr text-left">Snacks <span class="small-1">You are in the Snacks section, enjoy our products. </span></h1>
+
+
+</div> --><!-- end banner caption -->
+{% if tag=='snacks' %}
+{% if is_admin %}
+<div class="image-upload">
+	<label for="img_banner_snack">
+		<img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+	</label>
+	<input type="file" class="editableimage" image-id="{{ site.name }}_banner_snack" name="image" id="img_banner_snack">
+</div>
+{% end %}
+<img id="{{ site.name }}_banner_snack" src="{{ site_base }}/{{ nocache_static }}/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_snack') }}'" class="img-edit" alt="item" style="height: 100%;">
+
+<div class="banner-caption text-center info-article text-categorie"><!-- start banner caption -->
+	
+	{% if is_admin %}
+	<h1 class="whiteclr fsize50"><span class="editabletext" text-id="{{ site.name + '_banner_snack' }}">{{ read_text(site.name + '_banner_snack') }} </span>
+	<span class="small-1 editabletext" text-id="{{ site.name + '_banner_snack2' }}">{{ read_text(site.name + '_banner_snack2') }}
+	</h1>
+
+	{% else %}
+	<h1 class="whiteclr fsize50"> <span>{{ read_text(site.name + '_banner_snack') }} </span><span class="small-1">{{ read_text(site.name + '_banner_snack2') }}</span></h1>
+	{% end %}
+</div>
+
+</section><!-- end banner -->
+
+{% end %}
+
+{% if tag=='chocolates' %}
+{% if is_admin %}
+<div class="image-upload">
+	<label for="img_banner_chocolates">
+		<img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+	</label>
+	<input type="file" class="editableimage" image-id="{{ site.name }}_banner_chocolates" name="image" id="img_banner_chocolates">
+</div>
+{% end %}
+<img id="{{ site.name }}_banner_chocolates" src="{{ site_base }}/{{ nocache_static }}/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_chocolates') }}'" class="img-edit" alt="item" style="height: 100%;">
+
+<div class="banner-caption text-center info-article text-categorie"><!-- start banner caption -->
+	
+	{% if is_admin %}
+	<h1 class="whiteclr fsize50"><span class="editabletext" text-id="{{ site.name + '_banner_chocolates' }}">{{ read_text(site.name + '_banner_chocolates') }} </span>
+	<span class="small-1 editabletext" text-id="{{ site.name + '_banner_chocolates2' }}">{{ read_text(site.name + '_banner_chocolates2') }}
+	</h1>
+
+	{% else %}
+	<h1 class="whiteclr fsize50"> <span>{{ read_text(site.name + '_banner_chocolates') }} </span><span class="small-1">{{ read_text(site.name + '_banner_chocolates2') }}</span></h1>
+	{% end %}
+</div>
+
+</section><!-- end banner -->
+
+{% end %}
+
+{% if tag=='jarred' %}
+{% if is_admin %}
+<div class="image-upload">
+	<label for="img_banner_sauces">
+		<img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+	</label>
+	<input type="file" class="editableimage" image-id="{{ site.name }}_banner_sauces" name="image" id="img_banner_sauces">
+</div>
+{% end %}
+<img id="{{ site.name }}_banner_sauces" src="{{ site_base }}/{{ nocache_static }}/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_sauces') }}'" class="img-edit" alt="item" style="height: 100%;">
+
+<div class="banner-caption text-center info-article text-categorie"><!-- start banner caption -->
+	
+	{% if is_admin %}
+	<h1 class="whiteclr fsize50"><span class="editabletext" text-id="{{ site.name + '_banner_sauces' }}">{{ read_text(site.name + '_banner_sauces') }} </span>
+	<span class="small-1 editabletext" text-id="{{ site.name + '_banner_sauces2' }}">{{ read_text(site.name + '_banner_sauces2') }}
+	</h1>
+
+	{% else %}
+	<h1 class="whiteclr fsize50"> <span>{{ read_text(site.name + '_banner_sauces') }} </span><span class="small-1">{{ read_text(site.name + '_banner_sauces2') }}</span></h1>
+	{% end %}
+</div>
+
+</section><!-- end banner -->
+
+{% end %}
+
+{% if tag=='salt' %}
+{% if is_admin %}
+<div class="image-upload">
+	<label for="img_banner_salt">
+		<img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+	</label>
+	<input type="file" class="editableimage" image-id="{{ site.name }}_banner_salt" name="image" id="img_banner_salt">
+</div>
+{% end %}
+<img id="{{ site.name }}_banner_salt" src="{{ site_base }}/{{ nocache_static }}/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_salt') }}'" class="img-edit" alt="item" style="height: 100%;">
+
+<div class="banner-caption text-center info-article text-categorie"><!-- start banner caption -->
+	
+	{% if is_admin %}
+	<h1 class="whiteclr fsize50"><span class="editabletext" text-id="{{ site.name + '_banner_salt' }}">{{ read_text(site.name + '_banner_salt') }} </span>
+	<span class="small-1 editabletext" text-id="{{ site.name + '_banner_salt2' }}">{{ read_text(site.name + '_banner_salt2') }}
+	</h1>
+
+	{% else %}
+	<h1 class="whiteclr fsize50"><span>{{ read_text(site.name + '_banner_salt') }} <span class="small-1">{{ read_text(site.name + '_banner_salt2') }}</span></h1>
+	{% end %}
+</div>
+
+</section><!-- end banner -->
+
+{% end %}

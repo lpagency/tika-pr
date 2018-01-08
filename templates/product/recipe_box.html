@@ -1,0 +1,18 @@
+
+<script type="text/template" id="recipe-box">
+<a href="{{ site_base }}/detail_recipe?id={{! id }}" class="col-md-4 cosm-4 col-xs-12 recipe-wrapper">
+    <div>
+    <div class="img-wrapper img-wrapper-recipe box-4">
+        <img src="{{! images[0]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[0]['thumb_500'] }}'" style="width: 100%;">
+        <div class="mask">
+            <spam class="hover-recipe font-pacifico">Ver<br>Receta</spam>
+        </div>
+    </div>
+    <h4 class="merk ellipsis multiline">{{! name }}</h4>
+    <div class="">
+    	<h6 class="detalle-recipe ellipsis multiline " >{{! bullet_1 }}</h6>
+    </div>
+    <div class="space50"></div>
+    </div>
+</a>
+</script>

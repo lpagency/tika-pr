@@ -1,0 +1,90 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{% end %}
+
+{% block header %}
+{% include '../home/header_success.html' %}
+{% end %}
+
+{% block scripts %}
+
+{% if is_admin %}
+<script type="text/javascript">
+    $(document).editablepage({
+        page_name : "{{page.name}}",
+        page_keywords : "{{page.keywords}}",
+        page_uri : " {{ site_base }}",
+        body_url : site_base + "/page/{{ site_base }}/body"
+    });
+</script>
+{% else %}
+<script type="text/javascript">
+    $(document).loadpagecontent({
+        body_url : site_base + "/page/{{ site_base }}/body",
+        page_uri : "{{ page.uri }}"
+    });
+</script>
+
+{% end %}
+
+{% end %}
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+
+    .col-sm-6, .col-sm-12
+    {
+        padding: 2px;
+    }
+</style>
+{% end %}
+
+
+
+{% block body %}
+<div class="header-contact "></div>
+    <div id="wrap">
+        <!-- registration -->
+        <div class="clearfix su-fix"> </div>
+        <div class="container-fluid productlist">
+            <div class="row pages-caption" >
+                <div class="container-fluid-art text-center">
+                <h1>
+                {% if is_admin %}
+                <span class="success editabletext" text-id="{{ site.name + '-contact-success-title' }}" >{{ read_text(site.name +'-contact-success-title') }}</span>
+                {% else %}
+                <span  class="success">{{ read_text(site.name +'-contact-success-title') }}</span>
+                {% end %}
+                </h1>
+                </div>
+            </div>
+
+            <div class="row pages-caption" >
+                <div class="container-fluid-art text-center">
+                <p>
+                {% if is_admin %}
+                <span class="success_dos editabletext" text-id="{{ site.name + '-contact-success-p'}}" >{{ read_text(site.name+'-contact-success-p') }}</span>
+                {% else %}
+                <span  class="success_dos">{{ read_text(site.name+'-contact-success-p') }}</span>
+                {% end %}
+                </p>
+                </div>
+            </div>
+
+            <!-- raw 1 -->
+            <div class="row content-body">
+            </div>
+            <div class="carritoproductos clearfix">
+                <div class="flecha clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% end %}

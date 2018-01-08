@@ -1,0 +1,176 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+<style type="text/css">
+/*      body{
+        background: transparent;
+      }
+      ::-webkit-scrollbar { 
+    display: none; 
+
+  }*/
+</style>
+{% end %}
+
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/tika_tag_group.js"></script>
+<script src="{{ site_base }}/static/js/detalle-producto.js"></script>
+<script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript">
+
+  var base_url = 'https://apibodegas.loadingplay.com/',
+  checkout_url = 'https://pay.loadingplay.com/';
+
+  var app_public = 9;
+
+  function isLocalHost() {
+    return document.location.href.indexOf('localhost') != -1;
+  }
+
+  function isDevelopment() {
+    return document.location.href.indexOf('ondev.today') != -1;
+  }
+
+    // configure for each enviroment
+    if ( isLocalHost() ) 
+    {
+      base_url = 'https://apibodegas.loadingplay.com/';
+      checkout_url = 'https://pay.loadingplay.com/';
+      app_public= 15;
+    } 
+    else if ( isDevelopment() ) 
+    {
+      base_url = 'https://apibodegas.loadingplay.com/';
+      checkout_url = 'https://pay.loadingplay.com/';
+      app_public = 15;
+    }
+
+  var related = function(tag){
+      var config = {
+        'app_public' : app_public,
+        'base_url' : base_url,
+        'maxProducts' : 6,
+        'templateOrigin' : '#related-box',
+        'tag' : tag,
+        'ignore_stock' : true
+    };
+
+    // tika sticks
+    config.tag = tag;
+    $('.tikas-recetas').ecommerce('product_box', config);
+    };
+
+
+    $(document).ready(function()
+    {
+
+      var facade = $(document).ecommerce('product_detail', {
+        'app_public' : app_public,
+        'animation' : 'basic',
+        'base_url' : base_url,
+        'checkout_url': checkout_url,
+        'product_id' : Utils.getUrlParameter('id'),
+        'container' : '.recipe-detail',
+         onLoad: function(product){
+          related(product.bullet_3);
+          var ratio = window.devicePixelRatio || 1;
+          var w=screen.width * ratio;
+
+        }
+      });
+
+
+
+    });
+
+  </script>
+
+  <div type="template" id="product_detail" class="hidden">
+
+     <div class="width-banner">
+       <img id="{{ site.name }}_banner_detalle-prod" src="{{! images[1]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[1]['thumb_500'] }}'" class="fondo-banner" alt="item" style="position:relative;">
+     </div>
+
+      <section class="cpbuy-bg space50" style="color:#fff;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="{{! images[1]['thumb_500'] }}" class="product-image image img-responsive img-descrip" alt="item">
+            </div>
+            <div class="col-md-7 text-descrip">
+              <h2 class="name-recipe">{{! name }}</h2>
+              <p class="desc-prod">{{! description }}</p>
+              <!-- <img class="col-sm-12 img-nutric" src="https://7static.loadingplay.com/static/images/9725dcd1e34ee1c7c458e0756e174d64_imagen_1.png">
+              <img class="col-sm-12 img-nutric" src="https://7static.loadingplay.com/static/images/8d0b74197c42f73075422c35893bff77_imagen_2.png"> -->
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>
+
+  {% end %}
+
+  {% block body %}
+
+  {% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+  {% else %}
+    {% set editabletext = '' %}
+  {% end %}
+
+
+<!--   {% if is_admin %}
+
+  <div class="image-upload lapiz visible-movil">
+   <label for="img_banner_detalle-recipe">
+     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+   </label>
+   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_detalle-recipe" name="image" id="img_banner_detalle-recipe" >
+ </div>
+ {% end %} -->
+ <div style="position:relative">
+  
+<!--   <div class="img_banner_detalle-recipe" >
+        <div class="parallax-window" data-parallax="scroll" data-image-src="{{ read_image(site.name + '_banner_detalle-recipe',500) }}"></div>
+    </div>
+ -->
+  <!--  <img id="{{ site.name }}_banner_detalle-recipe" src="{{ read_image(site.name + '_banner_detalle-recipe', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_detalle-recipe',500) }}'" class="fondo-banner" alt="item" style="position:relative;"> -->
+ </div>
+ <div class="background-color">
+     <div class="container-fluid recipe-detail" >
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </div>
+
+
+    <!-- <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10 col-md-offset-1 tikas-recetas">
+
+        </div>
+      </div>
+    </div> -->
+
+    <div class="clearfix"></div>
+    {% include '../home/footer.html' %}
+    <div class="clearfix"></div>
+</div>
+{% end %}

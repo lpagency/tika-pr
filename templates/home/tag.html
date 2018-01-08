@@ -1,0 +1,104 @@
+<div class="col-md-6 space20 img-cat sobre-botones">		
+	<div class="box-product" onclick="">
+		<div class="vertical-center-cont"> 
+			<div class="horizontal-center-cont"> 
+				<div class="box-product-info" onclick="">     
+					<a class="tag" href="{{ site_base }}?tag=salt">
+						<button type="button" class="btn btn-outline">GO TO CATEGORIE</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% if is_admin %}																																						
+	<div class="image-upload">
+		<label for="img_banner_cat_salt">
+			<img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+		</label>
+		<input type="file" class="editableimage" image-id="{{ site.name }}_banner_cat_salt" name="image" id="img_banner_cat_salt" >
+	</div>
+	{% end %}
+	<img id="{{ site.name }}_banner_cat_salt" src="{{ site_base }}/{{ nocache_static }}/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_cat_salt') }}'" class="img-edit" alt="item">
+	<div class="img-text-center">
+		<h3>Salt &<br>
+			Seasoning</h3>
+	</div>
+</div>
+<div class="col-md-6 space20 img-cat sobre-botones">
+	<div class="box-product" onclick="">
+		<div class="vertical-center-cont"> 
+			<div class="horizontal-center-cont"> 
+				<div class="box-product-info" onclick="">     
+					<a class="tag" href="{{ site_base }}?tag=jarred">
+						<button type="button" class="btn btn-outline">GO TO CATEGORIE</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% if is_admin %}
+	<div class="image-upload">
+		<label for="img_banner_cat_sauces">
+			<img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+		</label>
+		<input type="file" class="editableimage" image-id="{{ site.name }}_banner_cat_sauces" name="image" id="img_banner_cat_sauces" >
+	</div>
+	{% end %}
+	<img id="{{ site.name }}_banner_cat_sauces" src="{{ site_base }}/{{ nocache_static }}/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_cat_sauces') }}'" class="img-edit" alt="item">
+	<div class="img-text-center">
+		<h3>Jarred &<br>
+			Canned Food</h3>
+		</div>
+	</div>
+	<div class="col-md-6 space20 img-cat sobre-botones">
+		<div class="box-product" onclick="">
+			<div class="vertical-center-cont"> 
+				<div class="horizontal-center-cont"> 
+					<div class="box-product-info" onclick="">     
+						<a class="tag" href="{{ site_base }}?tag=chocolates">
+							<button type="button" class="btn btn-outline">GO TO CATEGORIE</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% if is_admin %}
+		<div class="image-upload">
+			<label for="img_banner_cat_chocolates">
+				<img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+			</label>
+			<input type="file" class="editableimage" image-id="{{ site.name }}_banner_cat_chocolates" name="image" id="img_banner_cat_chocolates" >
+		</div>
+		{% end %}
+		<img id="{{ site.name }}_banner_cat_chocolates" src="{{ site_base }}/{{ nocache_static }}/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_cat_chocolates') }}'" class="img-edit" alt="item">
+		<div class="img-text-center">
+			<h3>Chocolates <br>
+				& Coffee</h3>
+			</div>
+		</div>
+		<div class="col-md-6 space20 img-cat sobre-botones">
+			<div class="box-product" onclick="">
+				<div class="vertical-center-cont"> 
+					<div class="horizontal-center-cont"> 
+						<div class="box-product-info" onclick="">     
+							<a class="tag" href="{{ site_base }}?tag=snacks">
+								<button type="button" class="btn btn-outline">GO TO CATEGORIE</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% if is_admin %}
+			<div class="image-upload">
+				<label for="img_banner_cat_snacks">
+					<img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+				</label>
+				<input type="file" class="editableimage" image-id="{{ site.name }}_banner_cat_snacks" name="image" id="img_banner_cat_snacks" >
+			</div>
+			{% end %}
+			<img id="{{ site.name }}_banner_cat_snacks" src="{{ site_base }}/{{ nocache_static }}/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_cat_snacks') }}'" class=" img-edit" alt="item">
+			<div class="img-text-center">
+				<h3>Healthy <br>
+					Snacks</h3>
+				</div>			
+			</div>

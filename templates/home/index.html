@@ -1,0 +1,321 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/tag_group_home.js" async="async"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/map_store.js" async="async"></script>
+
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+  <div class="container">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+            <div class="col-md-9 col-xs-12 col-sm-9">
+                <p class="natural {{editabletext}}"  text-id="{{ site.name + '_texto-natu' }}">  {{ read_text(site.name + '_texto-natu') }}   </p>
+                <!-- <p><span class="" ></span></p> -->
+            </div>
+        </div>
+    </div>   
+
+   <div class="container">
+        <div class="col-md-12 col-sm-12 col-xs-12 dis">
+            <div class="col-lg-2">
+                <img class="papita" src="https://7static.loadingplay.com/static/images/bc20e1d6a4c50211ff31086d22d79ad9_papita.png">
+                <p class="art  {{editabletext}}" text-id="{{ site.name + '_chico_1' }}"> {{ read_text(site.name +  '_chico_1') }} </p>
+            </div>
+            <div class="col-lg-2">
+                <img class="papitaa" src="https://7static.loadingplay.com/static/images/bc20e1d6a4c50211ff31086d22d79ad9_papita.png">
+                <p class="artt  {{editabletext}}" text-id="{{ site.name + '_chico_2' }}">{{ read_text(site.name +  '_chico_2') }}</p>
+            </div>
+            <div class="col-lg-2">
+                <img class="papitaaa" src="https://7static.loadingplay.com/static/images/bc20e1d6a4c50211ff31086d22d79ad9_papita.png">
+                <p class="arttt {{editabletext}}" text-id="{{ site.name + '_chico_3' }}">{{ read_text(site.name +  '_chico_3') }}</p>
+            </div>
+        </div>
+    </div>  
+
+<div class="background-color">
+
+<!--banner grande-->
+{% if is_admin %}
+<div class="col-lg-12">
+ <div class="image-upload lapiz visible-movil">
+     <label for="img_banner_grande_home">
+         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+     </label>
+     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_grande_home" name="image" id="img_banner_grande_home" >
+ </div>
+ {% end %}
+ <img id="{{ site.name }}_banner_grande_home" src="{{ read_image(site.name + '_banner_grande_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_grande_home',500) }}'" class="fondo" alt="item">
+
+ <!-- <img class="fondo" src="https://7static.loadingplay.com/static/images/702ba4f86ddd7e098d1e08feaa76262f_banner2.png">  -->
+</div>
+<div class="container">
+    <div class="row">
+       <div class="col-md-12">
+          <h3 class="cien  {{editabletext}}" text-id="{{ site.name + '_titulo_1' }}"> {{ read_text(site.name +  '_titulo_1') }}</h3>
+      </div>
+  </div>
+</div>
+
+
+<!--infografia-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6 col-xs-12 "> 
+                <h3 class="grafia  {{editabletext}}" text-id="{{ site.name + '_titulo_2' }}">{{ read_text(site.name +  '_titulo_2') }} </h3> 
+                <p class="cont {{editabletext}}" text-id="{{ site.name + '_info_1' }}" > {{ read_text(site.name +  '_info_1') }} </p> 
+                <p class="cont {{editabletext}}" text-id="{{ site.name + '_info_2' }}"> {{ read_text(site.name +  '_info_2') }}</p>
+            </div>  
+            <div class="col-md-6 col-xs-12 "> 
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_home_info">
+                       <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_home_info" name="image" id="img_home_info" >
+               </div>
+               {% end %}
+               <img id="{{ site.name }}_home_info" src="{{ read_image(site.name + '_home_info', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_info',500) }}'" class="info" alt="item" />
+
+               <!-- <img class="info" src="https://7static.loadingplay.com/static/images/102d3c2c9f85551425a3129ef8c95eed_Banner_nuestra_historia_1.png">  -->
+           </div>
+       </div>
+
+       <div class="col-lg-12">
+        <div class="col-md-6  col-xs-12 ">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_home_info_video">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_home_info_video" name="image" id="img_home_info_video" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_home_info_video" src="{{ read_image(site.name + '_home_info_video', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_info_video',500) }}'" class="info fo" alt="item" />
+
+            <!--  <img class="info fo" src="https://7static.loadingplay.com/static/images/30dd9655e1f38ef95f90b30ef996ee91_bannervideo.png"> -->
+            <!-- <img class="icon" src="https://84static.loadingplay.com/static/images/5979205750a3839671cd7c331c2fa889_icono_video.png"> -->
+        </div>
+        <div class="col-md-6  col-xs-12 "> 
+            <h3 class="grafiaa  {{editabletext}}" text-id="{{ site.name + '_titulo_3' }}">{{ read_text(site.name +  '_titulo_3') }} </h3> 
+            <p class="contt {{editabletext}}" text-id="{{ site.name + '_info_3' }}"> {{ read_text(site.name +  '_info_3') }}</p>
+
+        </div>
+
+        <div class="col-md-12  col-xs-11 bottom btn-conoce-nuestra-historia-wrapper">
+            <a href="{{ site_base }}/nuestra_historia" class="btn importad  btn-import btn-lg active btn-conoce-nuetra-historia" role="button">CONOCE NUESTRA HISTORIA</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="background-color">
+<!--vitrina productos-->
+<div class="container productoss">
+
+    <div class="space-60"></div>
+
+    <div class="row product-section-title" >
+        <div class="col-lg-12">
+            <div class="col-lg-6 col-md-12 col-sm-12 text-left" >
+                <h2 class="{{editabletext}}" text-id="{{ site.name + '_titulo_4' }}">
+                    {{ read_text(site.name +  '_titulo_4') }}
+                </h2>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 text-right" >
+                <a href="{{ site_base }}/productos" class="red2">
+                    Conoce todos nuestros productos
+                    <img class="triangle2" src="https://7static.loadingplay.com/static/images/87d02c7b715a4b8c849b185672e435f6_triangle.png">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="products row" >
+        <div class="col-lg-12" >
+        </div>
+        <div class="col-lg-12 conten-prod tika-home" >
+        </div>
+    </div>
+</div>
+  <!--redes sociales-->
+<div class="container">
+  <div class="fondo-gris" >
+    <div class="row space60" >
+        <div class="col-md-6 col-xs-12" >
+            <div class="col-md-12 text-right" >
+                <h3 class="escrit {{editabletext}}" text-id="{{ site.name + '_titulo_5' }}">{{ read_text(site.name +  '_titulo_5') }} </h3>
+            </div>
+            <div class="col-md-12 col-sm-12 col-x-12" >
+            <div class="cont-redes">
+               <a href="{{ get_config("facebook") }}"> <img class="redes pull-right col-md-3 col-xs-4" src="https://7static.loadingplay.com/static/images/4df0b24d8efd1543103cd9f608d51749_facebook.png" /> </a>
+               <a href="{{ get_config("instagram") }}"> <img class="redes pull-right col-md-3 col-xs-4" src="https://84static.loadingplay.com/static/images/a4895a2f2337af051356291f722c1f68_instagram.png" /> </a>
+               </div>
+           </div>
+           <div class="clearfix" ></div>
+       </div>
+       
+       <div class="container">
+       <div class="col-md-4 col-sm-12 col-xs-12 image-redes-sociales text-center" >
+         {% if is_admin %}
+         <div class="image-upload lapiz visible-movil">
+           <label for="img_papas_redes">
+               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+           </label>
+           <input type="file" class="editableimage" image-id="{{ site.name }}_papas_redes" name="image" id="img_papas_redes" >
+       </div>
+       {% end %}
+       <img id="{{ site.name }}_papas_redes" src="{{ read_image(site.name + '_papas_redes', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_papas_redes',500) }}'" class="papas" alt="item">
+
+       <!--   <img class="col-md-8 col-xs-12 papas" src="https://84static.loadingplay.com/static/images/59e2eabc011bb29c457d41ef29737c74_banner_redes_sociales.png"> -->
+   </div>
+  </div>
+
+</div>
+</div>
+</div>
+<!--vitrina recetas-->
+<seccion>
+    <div class="container recetas">
+
+        <div class="space-60"></div>
+        <div class="row product-section-title" >
+            <div class="col-lg-12">
+                <div class="col-lg-6 col-md-12 col-sm-12 text-left" >
+                    <h2 class="{{editabletext}}" text-id="{{ site.name + '_titulo_6' }}"> {{ read_text(site.name +  '_titulo_6') }}</h2>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 text-right" >
+                    <a href="{{ site_base }}/recetas" class="red2">
+                        Conoce todas nuestras recetas
+                        <img class="triangle2" src="https://7static.loadingplay.com/static/images/87d02c7b715a4b8c849b185672e435f6_triangle.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 conten-prod recipe-home" >
+
+            </div>
+        </div>
+    </div>
+</seccion>
+      <!--mapa-->
+<!--
+<img class="fondo-mapa" src="https://84static.loadingplay.com/static/images/2c2cd81ed0a4a70517f1c01202c892e2_mapa.png">
+-->
+<section style="height:600px;">
+    <div id="map" class="fondo-mapa">
+    </div>
+    <!-- fin editar imagen -->
+    <div class="on-map absolute top-map">
+        <div class="container-fluid-new absolute">
+            <div class="row-fluid-new">
+                <div class="offset3 span6 centering" style="text-align:center;">
+                    <h1 class="map-descrip {{editabletext}}" text-id="{{ site.name + '_mapa_text' }}">{{ read_text(site.name +  '_mapa_text') }}</h1>
+                    <h2 class="map-descrip sub {{editabletext}}" text-id="{{ site.name + '_mas_5' }}">{{ read_text(site.name +  '_mas_5') }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-6 col-xs-11 bottom rojo">
+            <a href="{{ site_base }}/tika_en_el_mundo" class="btn importad btn-lg active" role="button">CONOCE NUESTROS IMPORTADORES</a>
+        </div>
+    </div>
+
+</section>
+
+<section>
+
+    <!--llamados de accion-->
+    <div class="container cuadrit">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div align="center">
+                <div class="col-md-4 col-xs-12 contact-box">
+                    {% if is_admin %}
+                    <div class="image-upload lapiz visible-movil lla1">
+                       <label for="img_banner_importador">
+                           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                       </label>
+                       <input type="file" class="editableimage" image-id="{{ site.name }}_banner_importador" name="image" id="img_banner_importador" >
+                   </div>
+                   {% end %}
+                   <img id="{{ site.name }}_banner_importador" src="{{ read_image(site.name + '_banner_importador', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_importador',500) }}'" class="cuadros" alt="item">
+                   <!-- <img class="cuadros" src="https://7static.loadingplay.com/static/images/91a0afc0433534823094a6f6905b86bf_importador.png"> -->
+                   <h3 class="sobre {{editabletext}}" text-id="{{ site.name + '_ser_importador' }}"> {{ read_text(site.name +  '_ser_importador') }}</h3>
+                   <a href="{{ site_base }}/contact2" class="btn mas btn-lg active actii" role="button">CONOCE MÁS</a>
+               </div>
+               </div>
+
+               <div align="center">
+               <div class="col-md-4 col-xs-12 contact-box">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_banner_proveedor">
+                       <img class="change-image pencil-2" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_proveedor" name="image" id="img_banner_proveedor" >
+               </div>
+               {% end %}
+               <img id="{{ site.name }}_banner_proveedor" src="{{ read_image(site.name + '_banner_proveedor', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_proveedor',500) }}'" class="cuadross" alt="item">
+               <!--  <img class="cuadross" src="https://84static.loadingplay.com/static/images/c63194b5ca415f50f3696d60e6b34e4c_proveedor.png"> -->
+               <h3 class="sobre2 {{editabletext}}" text-id="{{ site.name + '_ser_proveedor' }}"> {{ read_text(site.name +  '_ser_proveedor') }}</h3>
+               <a href="{{ site_base }}/contact3" class="btn mas btn-lg active actiii" role="button">CONOCE MÁS</a>
+           </div>
+           </div>
+           
+           <div align="center">
+           <div class="col-md-4 col-xs-12 contact-box">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil lla">
+                <label for="img_banner_contacto_home">
+                    <img class="change-image pencil-2" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_contacto_home" name="image" id="img_banner_contacto_home" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_banner_contacto_home" src="{{ read_image(site.name + '_banner_contacto_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_contacto_home',500) }}'" class="cuadrosss ulti" alt="item">
+            <!--  <img class="cuadross ulti" src="https://84static.loadingplay.com/static/images/c63194b5ca415f50f3696d60e6b34e4c_proveedor.png"> -->
+            <h3 class="sobre3 {{editabletext}}" text-id="{{ site.name + '_cont_tac' }}"> {{ read_text(site.name +  '_cont_tac') }}</h3>
+            <a href="{{ site_base }}/contact" class="btn mas btn-lg active actiiii btn-img-3" role="button">CONOCE MÁS</a>
+            <div class="clearfix"></div>
+        </div>
+        </div>
+    
+    </div>
+</div>
+</div>
+</section>
+
+<!-- </html> -->
+<!-- <div class="space148">
+-->    
+
+{% include '../home/footer.html' %}
+</div>
+{% end %}

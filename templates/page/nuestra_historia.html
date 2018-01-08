@@ -1,0 +1,147 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+ {% include '../home/header_inside.html' %}
+{% end %}
+
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+<div class="container rel relative">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- editar imagen -->
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_banner_nuestra_historia_1">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_nuestra_historia_1" name="image" id="img_banner_nuestra_historia_1" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_banner_nuestra_historia_1" src="{{ read_image(site.name + '_banner_nuestra_historia_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_nuestra_historia_1',500) }}'" class="nues" alt="item" />
+            <!-- fin editar imagen -->
+
+            <!-- <img  class="nues" src="https://7static.loadingplay.com/static/images/bc22e2cf31ef7e3cd9de1fed64ffb861_Salsa2.png"> -->
+        </div> 
+    </div>
+    <div class="row">
+        <div class="col-sm-12 ab">
+            <h3 class="nu {{editabletext}}" text-id="{{ site.name + '_nuestra_1' }}" style="text-align:center;"> {{ read_text(site.name +  '_nuestra_1') }} </h3>
+        </div>
+    </div>
+    <div class="row ab absolute">
+        <div class="col-sm-12">
+            <p class="the {{editabletext}}" text-id="{{ site.name + '_info_nuestra' }}" style="text-align:center;" > 
+            {{ read_text(site.name +  '_info_nuestra') }} </p>
+        </div>
+        <div class="col-sm-12">
+           <p class="thee {{editabletext}}"  text-id="{{ site.name + '_info_nuestra_1' }}" style="text-align:center;" > 
+               {{ read_text(site.name +  '_info_nuestra_1') }}  </p>
+        </div>
+    </div>
+
+    <div class="row nh-4">
+        <div class="col-sm-12">
+            <div class="col-sm-12">
+                <p class="theee {{editabletext}}" text-id="{{ site.name + '_info_nuestra_2' }}" style="text-align:center;" > 
+                      {{ read_text(site.name +  '_info_nuestra_2') }}  </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container relative">
+    <div class="row">
+        <div class="col-lg-12">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_banner_nuestra_historia_2">
+                    <img class="change-image especial" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_nuestra_historia_2" name="image" id="img_banner_nuestra_historia_2" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_banner_nuestra_historia_2" src="{{ read_image(site.name + '_banner_nuestra_historia_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_nuestra_historia_2',500) }}'" class="nuess" alt="item">
+
+
+            <!-- <img class="nuess" src="https://7static.loadingplay.com/static/images/271c77cfec6b7605f538a779db98336a_salsa.png"> -->
+        </div>
+    </div>
+    <div class="row nh-4">
+        <div class="col-sm-12">
+            <p class="bott {{editabletext}}" text-id="{{ site.name + '_info_nuestra_3' }}" style="text-align:center;"> {{ read_text(site.name +  '_info_nuestra_3') }}</p>
+        </div>
+        <div class="col-sm-12">
+            <p class="both {{editabletext}}" text-id="{{ site.name + '_info_nuestra_4' }}" style="text-align:center;"> {{ read_text(site.name +  '_info_nuestra_4') }}</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container relative">
+    <div class="row">
+        <div class="col-sm-12">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_banner_nuestra_historia_3">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_nuestra_historia_3" name="image" id="img_banner_nuestra_historia_3" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_banner_nuestra_historia_3" src="{{ read_image(site.name + '_banner_nuestra_historia_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_nuestra_historia_3',500) }}'" class="nuessss" alt="item">
+
+
+            <!--  <img class="nuessss" src="https://84static.loadingplay.com/static/images/d1d0337be64e0de4462bd2febd7e2e35_Papas_Nativas.png"> -->
+        </div>
+    </div>
+    <div class="row nh-4">
+        <div class="col-sm-12">
+            <p class="bothh {{editabletext}}" text-id="{{ site.name + '_info_nuestra_5' }}" style="text-align:center;"> {{ read_text(site.name +  '_info_nuestra_5') }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container relative" >
+
+    {% if is_admin %}
+    <div class="image-upload lapiz visible-movil">
+        <label for="img_banner_nuestra_historia_4">
+            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+        </label>
+        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_nuestra_historia_4" name="image" id="img_banner_nuestra_historia_4" >
+    </div>
+    {% end %}
+    <img id="{{ site.name }}_banner_nuestra_historia_4" src="{{ read_image(site.name + '_banner_nuestra_historia_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_nuestra_historia_4',500) }}'" class="nuesss" alt="item" />
+
+    <div class="container nh-4">
+        <div class="row">
+            <div class="col-sm-12">
+                <p class="bottt {{editabletext}}" text-id="{{ site.name + '_info_nuestra_6' }}"> {{ read_text(site.name +  '_info_nuestra_6') }}</p>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <p class="bottt {{editabletext}}" text-id="{{ site.name + '_info_nuestra_6' }}"> {{ read_text(site.name +  '_info_nuestra_6') }}</p>
+            </div>
+        </div>
+    </div>
+    -->
+</div>
+<div class="space90"></div>
+{% include '../home/footer.html' %}
+
+{% end %}
