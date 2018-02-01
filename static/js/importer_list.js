@@ -30,18 +30,15 @@ $(document).on('pjax:end ready', function() {
     // configure for each enviroment
     if ( isLocalHost() ) 
     {
-        // base_url = 'https://apibodegas.loadingplay.com/store/pagination/';
-        // checkout_url = 'https://pay.loadingplay.com/';
-        // app_public = 15;
         base_url = 'https://apibodegas.loadingplay.com/store/pagination/';
         checkout_url = 'http://localhost:8522/';
-        app_public= 15;
+        app_public= 9;
     } 
     else if ( isDevelopment() ) 
     {
         base_url = 'https://apibodegas.loadingplay.com/store/pagination/';
         checkout_url = 'https://pay.loadingplay.com/';
-        app_public = 15;
+        app_public = 9;
     }
 
     if (!$.fn.dataTable.isDataTable('#stores')) {
