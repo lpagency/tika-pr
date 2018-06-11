@@ -60,5 +60,7 @@ $(document).ready(function()
     config.tag = 'Tika%20Veggies';
     $('.tika-veggies').ecommerce('product_box', config);
 
-
+    // tika cereal salvaje
+    config.tag = 'tika_cereal_salvaje';
+    $('.tika-cereal-salvaje').ecommerce('product_box', config);
 });
