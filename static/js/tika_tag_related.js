@@ -53,10 +53,4 @@ $(document).ready(function()
     // tika home
     config.tag = 'tika%20home';
     $('.tika-home').ecommerce('product_box', config);
-
-    // tika veggies
-    config.tag = 'Tika%20Veggies';
-    $('.tika-veggies').ecommerce('product_box', config);
-
-
 });
