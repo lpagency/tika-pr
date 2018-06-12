@@ -56,10 +56,6 @@ $(document).ready(function()
     config.tag = 'tika%20home';
     $('.tika-home').ecommerce('product_box', config);
 
-    // tika veggies
-    config.tag = 'Tika%20Veggies';
-    $('.tika-veggies').ecommerce('product_box', config);
-
     // tika cereal salvaje
     config.tag = 'tika_cereal_salvaje';
     $('.tika-cereal-salvaje').ecommerce('product_box', config);
