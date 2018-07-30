@@ -10,13 +10,13 @@ $(document).on('pjax:end ready', function() {
     //     "html": false, //Button which allows you to edit the generated HTML. Default false
     //     "link": false, //Button to insert a link. Default true
     //     "image": false, //Button to insert an image. Default true,
-    //     "color": false, //Button to change color of font  
+    //     "color": false, //Button to change color of font
     //     "locale": "es"
     // });
 
     var base_url = 'https://apibodegas.loadingplay.com/store/pagination/',
     checkout_url = 'https://pay.loadingplay.com/';
-    var app_public = 9;
+    var app_public = 'tika';
 
     function isLocalHost() {
         return document.location.href.indexOf('localhost') != -1;
@@ -27,20 +27,20 @@ $(document).on('pjax:end ready', function() {
     }
 
     // configure for each enviroment
-    if ( isLocalHost() ) 
+    if ( isLocalHost() )
     {
         // base_url = 'https://apibodegas.loadingplay.com/store/pagination/';
         // checkout_url = 'https://pay.loadingplay.com/';
-        // app_public = 15;
+        // app_public = 'tika';
         base_url = 'http://localhost:8520/store/pagination/';
         checkout_url = 'http://localhost:8522/';
-        app_public= 15;
-    } 
-    else if ( isDevelopment() ) 
+        app_public= 'tika';
+    }
+    else if ( isDevelopment() )
     {
         base_url = 'https://apibodegas.loadingplay.com/store/pagination/';
         checkout_url = 'https://pay.loadingplay.com/';
-        app_public = 15;
+        app_public = 'tika';
     }
 
     if (!$.fn.dataTable.isDataTable('#stores')) {
