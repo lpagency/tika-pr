@@ -14,7 +14,7 @@
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bower/bodegas.client/dist/bodegas.client.css?25">
         <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css?25">
-        
+
         <link rel="stylesheet" type="text/css" href="{{ site_base }}/{{nocache_static}}/css/style.css?25">
 
         <link rel="stylesheet" type="text/css" href="{{ site_base }}/{{nocache_static}}/css/banner_grande.css?25">
@@ -33,7 +33,7 @@
 
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.css?25"/>
 
-        
+
         {% block css %}{% end %}
 
         {% include 'product/product_box.html' %}
@@ -47,7 +47,7 @@
             <div class="top_wrapper">
               <div class="fondoo_inside">
                   <div class="head-container">
-                   <div class="container"> 
+                   <div class="container">
                       <div class="row linea">
                         <div class="logo_wrapper col-md-3 col-sm-4 col-xs-12">
                             <a href="{{ site_base }}">
@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="collapse navbar-collapse opac" id="bs-example-navbar-collapse-2">
 
-                                        <ul class="nav navbar-nav navbar-left nav-header-li-hover gran2" style="letter-spacing: -1px;">                               
+                                        <ul class="nav navbar-nav navbar-left nav-header-li-hover gran2" style="letter-spacing: -1px;">
                                             <li>
                                                 <a href="{{ site_base }}/nuestra_historia" class="colorr">NUESTRA HISTORIA</a>
                                             </li>
@@ -158,7 +158,7 @@
         <!-- <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script> -->
 
         <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
-        <script type="text/javascript" src="{{ site_base }}/common/js/bower/bodegas.client/dist/bodegas.client.js"></script>
+        <script type="text/javascript" src="https://cdn.loadingplay.com/js/connect/1.0.0/bodegas.client.es5.js"></script>
 <!--         // <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/jquery.fancybox.pack.js"></script> -->
         <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
 
@@ -232,8 +232,8 @@
             {
                 var hash = window.location.hash;
                 // window.location.href= hash;
-                
-                if (hash !== "") 
+
+                if (hash !== "")
                 {
                     $('html,body').animate({
                         scrollTop: $(hash).offset().top

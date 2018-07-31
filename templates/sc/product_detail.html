@@ -18,7 +18,7 @@
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/tika_tag_group.js"></script>
 <script src="{{ site_base }}/static/js/detalle-producto.js"></script>
-<script type="text/javascript" src="{{ site_base }}/common/js/bower/bodegas.client/dist/bodegas.client.js"></script>
+<script type="text/javascript" src="https://cdn.loadingplay.com/js/connect/1.0.0/bodegas.client.es5.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script type="text/javascript">
@@ -26,7 +26,7 @@
 
     var base_url = 'https://apibodegas.loadingplay.com/',
     checkout_url = 'https://pay.loadingplay.com/';
-    var app_public = 9;
+    var app_public = 'tika';
 
     function isLocalHost() {
         return document.location.href.indexOf('localhost') != -1;
@@ -37,17 +37,17 @@
     }
 
     // configure for each enviroment
-    if ( isLocalHost() ) 
+    if ( isLocalHost() )
     {
         base_url = 'https://apibodegas.loadingplay.com/';
         checkout_url = 'https://pay.loadingplay.com/';
-        app_public= 9;
-    } 
-    else if ( isDevelopment() ) 
+        app_public= 'tika';
+    }
+    else if ( isDevelopment() )
     {
         base_url = 'https://apibodegas.loadingplay.com/';
         checkout_url = 'https://pay.loadingplay.com/';
-        app_public = 9;
+        app_public = 'tika';
     }
 
 

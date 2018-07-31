@@ -13,17 +13,17 @@ $(document).ready(function()
     var base_url= "https://apibodegas.loadingplay.com/";
 
     // configure for each enviroment
-    if ( isLocalHost() ) 
+    if ( isLocalHost() )
     {
         base_url="https://apibodegas.loadingplay.com/";
-    } 
-    else if ( isDevelopment() ) 
+    }
+    else if ( isDevelopment() )
     {
         base_url="https://apibodegas.loadingplay.com/";
     }
 
     var config = {
-        'app_public' : 9,
+        'app_public' : 'tika',
         'base_url' : base_url,
         'maxProducts' : 6,
         'templateOrigin' : '#product-box',
