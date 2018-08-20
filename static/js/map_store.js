@@ -1,7 +1,7 @@
 
 var base_url = 'https://apibodegas.loadingplay.com/',
 checkout_url = 'https://pay.loadingplay.com/';
-var app_public = 'tika';
+var site_name = 'tika';
 
 function isLocalHost() {
     return document.location.href.indexOf('localhost') != -1;
@@ -14,18 +14,13 @@ function isDevelopment() {
 // configure for each enviroment
 if ( isLocalHost() )
 {
-    base_url = 'https://apibodegas.loadingplay.com/';
-    checkout_url = 'https://pay.loadingplay.com/';
-    app_public = 'tika';
-    // base_url = 'http://localhost:8520/';
-    // checkout_url = 'http://localhost:8522/';
-    // app_public= 'tika';
+    base_url = 'http://localhost:8520/';
+    checkout_url = 'http://localhost:8522/';
 }
 else if ( isDevelopment() )
 {
-    base_url = 'https://apibodegas.loadingplay.com/';
-    checkout_url = 'https://pay.loadingplay.com/';
-    app_public = 'tika';
+    base_url = 'https://apibodegas.ondev.today/';
+    checkout_url = 'https://lpcheckout.ondev.today/';
 }
 
 
@@ -37,10 +32,20 @@ var showPlaces = function(stores)
         place['<strong>'+stores.stores[x].name+'</strong><br>'+stores.stores[x].street+' '+stores.stores[x].number+', '+stores.stores[x].city+', '+stores.stores[x].country]=new google.maps.LatLng(stores.stores[x].latitude, stores.stores[x].longitude);
     }
 
+    var drgflag=true;
+
+    //pregunta si está en un dispositivo movil
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // alert("mobile");
+        // map.setOptions({ 'draggable': false });
+        drgflag=false;
+    }
+
     var popup;
     var n=1;
     var options = {
         scrollwheel: false,
+        draggable: drgflag,
         zoom: 2,
         center: new google.maps.LatLng(32.022257, -89.919111),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -56,7 +61,7 @@ var showPlaces = function(stores)
             position: place[i]
             , map: map
             , title: i
-            , icon: 'https://7static.loadingplay.com/static/images/8e826ba93345b1d1054b143f47c29adf_pin.png'
+            , icon: 'https://7static.loadingplay.com/static/images/e58f0bca304edffce3671ca2fd6679e1_pin_10PX.png'
         });
 
         google.maps.event.addListener(marker, 'click', function(){
@@ -76,7 +81,7 @@ $(document).ready(function()
 {
     $.ajax(
     {
-        url:base_url+"store/list_type/"+app_public+"/1",
+        url:base_url+"store/list_type/"+site_name+"/1",
         success: function(data)
         {
             showPlaces(data);
