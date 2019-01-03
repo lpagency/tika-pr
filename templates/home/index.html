@@ -13,7 +13,7 @@
 {% end %}
 
 {% block javascript %}
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQpAaWCeHAjQx4r1jum-tElwQNGdFNp2Y"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/tag_group_home.js" async="async"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/map_store.js" async="async"></script>
 
@@ -33,7 +33,7 @@
                 <!-- <p><span class="" ></span></p> -->
             </div>
         </div>
-    </div>   
+    </div>
 
    <div class="container">
         <div class="col-md-12 col-sm-12 col-xs-12 dis">
@@ -50,7 +50,7 @@
                 <p class="arttt {{editabletext}}" text-id="{{ site.name + '_chico_3' }}">{{ read_text(site.name +  '_chico_3') }}</p>
             </div>
         </div>
-    </div>  
+    </div>
 
 <div class="background-color">
 
@@ -82,12 +82,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="col-md-6 col-xs-12 "> 
-                <h3 class="grafia  {{editabletext}}" text-id="{{ site.name + '_titulo_2' }}">{{ read_text(site.name +  '_titulo_2') }} </h3> 
-                <p class="cont {{editabletext}}" text-id="{{ site.name + '_info_1' }}" > {{ read_text(site.name +  '_info_1') }} </p> 
+            <div class="col-md-6 col-xs-12 ">
+                <h3 class="grafia  {{editabletext}}" text-id="{{ site.name + '_titulo_2' }}">{{ read_text(site.name +  '_titulo_2') }} </h3>
+                <p class="cont {{editabletext}}" text-id="{{ site.name + '_info_1' }}" > {{ read_text(site.name +  '_info_1') }} </p>
                 <p class="cont {{editabletext}}" text-id="{{ site.name + '_info_2' }}"> {{ read_text(site.name +  '_info_2') }}</p>
-            </div>  
-            <div class="col-md-6 col-xs-12 "> 
+            </div>
+            <div class="col-md-6 col-xs-12 ">
                 {% if is_admin %}
                 <div class="image-upload lapiz visible-movil">
                    <label for="img_home_info">
@@ -117,8 +117,8 @@
             <!--  <img class="info fo" src="https://7static.loadingplay.com/static/images/30dd9655e1f38ef95f90b30ef996ee91_bannervideo.png"> -->
             <!-- <img class="icon" src="https://84static.loadingplay.com/static/images/5979205750a3839671cd7c331c2fa889_icono_video.png"> -->
         </div>
-        <div class="col-md-6  col-xs-12 "> 
-            <h3 class="grafiaa  {{editabletext}}" text-id="{{ site.name + '_titulo_3' }}">{{ read_text(site.name +  '_titulo_3') }} </h3> 
+        <div class="col-md-6  col-xs-12 ">
+            <h3 class="grafiaa  {{editabletext}}" text-id="{{ site.name + '_titulo_3' }}">{{ read_text(site.name +  '_titulo_3') }} </h3>
             <p class="contt {{editabletext}}" text-id="{{ site.name + '_info_3' }}"> {{ read_text(site.name +  '_info_3') }}</p>
 
         </div>
@@ -178,7 +178,7 @@
            </div>
            <div class="clearfix" ></div>
        </div>
-       
+
        <div class="container">
        <div class="col-md-4 col-sm-12 col-xs-12 image-redes-sociales text-center" >
          {% if is_admin %}
@@ -288,7 +288,7 @@
                <a href="{{ site_base }}/contact3" class="btn mas btn-lg active actiii" role="button">CONOCE MÁS</a>
            </div>
            </div>
-           
+
            <div align="center">
            <div class="col-md-4 col-xs-12 contact-box">
             {% if is_admin %}
@@ -306,7 +306,7 @@
             <div class="clearfix"></div>
         </div>
         </div>
-    
+
     </div>
 </div>
 </div>
@@ -314,7 +314,7 @@
 
 <!-- </html> -->
 <!-- <div class="space148">
--->    
+-->
 
 {% include '../home/footer.html' %}
 </div>
